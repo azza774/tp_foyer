@@ -13,7 +13,7 @@ pipeline {
 
         stage('Maven Build') {
             steps {
-                sh './mvnw -B -DskipTests clean package'
+                sh 'bash mvnw -B -DskipTests clean package'
             }
         }
 
