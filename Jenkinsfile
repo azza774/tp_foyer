@@ -20,7 +20,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh './mvnw -B sonar:sonar'
+                    sh 'bash mvnw -B sonar:sonar'
                 }
             }
         }
