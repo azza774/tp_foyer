@@ -13,14 +13,14 @@ pipeline {
 
         stage('Maven Build') {
             steps {
-                sh 'bash mvnw -B -DskipTests clean package'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
 
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh 'bash mvnw -B sonar:sonar'
+                    sh 'mvn -B sonar:sonar'
                 }
             }
         }
